@@ -4,6 +4,9 @@ class Location {
   double _latitude;
   double _longitude;
 
+
+  Location();
+
   Future<void> getCurrentLocation() async {
     try {
       Position position = await Geolocator()
