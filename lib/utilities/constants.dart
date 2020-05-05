@@ -20,3 +20,6 @@ const kConditionTextStyle = TextStyle(
 );
 
 const String kOpenWeatherKey = '77abe155820b33e2d6ecac7e87bc80d4';
+
+
+const String openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
