@@ -21,5 +21,24 @@ const kConditionTextStyle = TextStyle(
 
 const String kOpenWeatherKey = '77abe155820b33e2d6ecac7e87bc80d4';
 
+const String openWeatherMapUrl =
+    'https://api.openweathermap.org/data/2.5/weather';
 
-const String openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const kTextFieldInputDecoration = InputDecoration(
+  filled: true,
+  fillColor: Colors.white,
+  icon: Icon(
+    Icons.location_city,
+    color: Colors.white,
+  ),
+  hintText: 'Enter City Name',
+  hintStyle: TextStyle(
+    color: Colors.grey,
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(10.0),
+    ),
+    borderSide: BorderSide.none,
+  ),
+);

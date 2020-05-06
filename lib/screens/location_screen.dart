@@ -20,7 +20,6 @@ class _LocationScreenState extends State<LocationScreen> {
   String message;
   String icon;
 
-
   @override
   void initState() {
     super.initState();
@@ -30,7 +29,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
   void updateUI(dynamic weatherData) {
     setState(() {
-      if(weatherData == null){
+      if (weatherData == null) {
         temp = 0;
         icon = 'error';
         cityName = '';
@@ -77,7 +76,9 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/city');
+                    },
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
