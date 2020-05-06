@@ -1,16 +1,27 @@
 import 'package:clima/services/location.dart';
-import 'package:clima/services/networking.dart';
+import 'package:clima/services/network_helper.dart';
 import 'package:clima/utilities/constants.dart';
 
 class WeatherModel {
+  NetworkHelper networkHelper;
+  var weatherData;
+
   Future<dynamic> getLocationWeather() async {
     Location location = Location();
     // Get Device Location
     await location.getCurrentLocation();
 
-    NetworkHelper networkHelper = NetworkHelper(
+    networkHelper = NetworkHelper(
         '$openWeatherMapUrl?lat=${location.latitude}&lon=${location.longitude}&appid=$kOpenWeatherKey&units=metric');
-    var weatherData = await networkHelper.getData();
+    weatherData = await networkHelper.getData();
+    return weatherData;
+  }
+
+  Future<dynamic> getCityWeather(String city) async {
+    networkHelper = NetworkHelper(
+        '$openWeatherMapUrl?q=$city&appid=$kOpenWeatherKey&units=metric');
+
+    weatherData = await networkHelper.getData();
     return weatherData;
   }
 
